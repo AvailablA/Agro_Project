@@ -1,0 +1,308 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* background-repeat: no-repeat; */
+}
+
+#HeadSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    background-color: white;
+    border: 1px solid grey;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    padding-left: 10px;
+}
+
+/* HeadSection left */
+#HeaderSection #left h1
+{
+    font-size: 16px;
+}
+
+#HeaderSection #left h1 span
+{
+    margin-left: 8px;
+}
+
+#HeadSection #left h1:hover + ul.sub-menu {
+    display: block;
+}
+#HeadSection #right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 28px;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+    position: relative;
+}
+.navbar a {
+    text-decoration: none;
+    color: gray;
+    cursor: pointer; 
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: gray;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+.sub-menu li {
+    margin: 15px 10px;
+    font-size: 15px;
+    width: 16vh;
+    height: 2.4vh;
+}
+.navbar li:hover > .sub-menu {
+    display: block;
+}
+#search-bar {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 15px;
+    cursor: pointer;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Add this line to bring it to the front */
+}
+
+#ImageSection
+{
+    width: 100%;
+    height: 510px;
+    background-image: url("./imgs/imgslide/mainImg.jpg");
+    background-size: 100% 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    animation: changeImage 15s linear infinite;
+}
+@keyframes changeImage {
+    0%{
+        background-image: url("./imgs/imgslide/farmplant1.webp");
+    }
+    75%{
+        background-image: url("./imgs/imgslide/farmplant2.webp");
+    }
+    75%{
+        background-image: url("./imgs/imgslide/farmplant3.webp");
+    }
+    75%{
+        background-image: url("./imgs/imgslide/farmplant4.webp");
+    }
+}
+#ImageSection
+{
+    position: relative;
+}
+/* CSS for Search Bar and Search Icon */
+#search-bar {
+    text-align: center;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 15px;
+     /* Search bar smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Search bar box shadow */
+#search-bar:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+#search-input {
+    height: 43px;
+    background: transparent;
+    outline: none;
+    width: 33vw;
+    color: rgb(38, 31, 31);
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+/* Background color of input  */
+#search-input:hover {
+    background-color: #f0f0f0;
+}
+
+#search-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Body Section */
+
+#BodySection {
+    border: 2 px solid chartreuse;
+    text-align: center;
+    color: lightgray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 145px;
+    background-color: rgba(5, 5, 5, 0);
+    padding: 30px;
+    border-radius: 10px;
+}
+#BodySection h1 {
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+#BodySection p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#BodySection button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 25px; 
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid white;
+}
+
+#BodySection button:hover {
+    background-color: #ff5555;
+}
+
+
+/* mid-section */
+
+.mid
+{
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+.mid>div
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2,350px); */
+    gap: 28px;
+}
+#container:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+  
+.mid>div>div
+{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.mid>div>div>img
+{
+    width: 100%;
+    height: 75%;
+}
+.mid>div>div>div
+{
+    text-align: center;
+}
+.btn-outline-success {
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+.btn-primary {
+    margin-top: 22px;
+    margin-bottom: 8px;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+/* Certificate Section */
+
+#certificates
+{
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 35px 0;
+    background-color: #fff;
+    white-space: nowrap;
+    /* border: 2px solid red; */
+}
+/* #certificates:hover .certificate-slide{
+    animation-play-state: paused;
+} */
+.certificate-slide img
+{
+    height: 95px;
+    margin: 0 40px;
+}
+.certificate-slide{
+    display: inline-block;
+    animation: 11s slide infinite linear;
+}
+@keyframes slide{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.site-footer-widgets
+{
+    /* height: 100px; */
+    padding-top: 50px;
+    padding-bottom: 35px;
+    color: white;
+    background-color: #2b596f;
+}
+.site-footer{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #f0f0f0;
+    background-color: #08161d;
+}

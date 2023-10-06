@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <title>Agro | Company Name</title>
+    <link rel="shortcut icon" href="./imgs/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+
+    
+    <div class="login-box">
+        <div class="form-box">
+            <div class="btn-box">
+                <div id="btn"></div>
+                <button type="button" class="log-btn" onclick="login()">Log In</button>
+                <button type="button" class="log-btn" onclick="register()">Register</button>
+            </div>
+            
+            <div class="icons">
+                <a href="https://www.facebook.com/"><img src="./imgs/facebookicon.png"></a>
+                <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><img src="./imgs/twittericon.png"></a>
+                <a href="https://www.google.com/"><img src="./imgs/googleicon.png"></a>
+            </div>
+
+            <form id="login" class="log-form">
+                <input type="text" class="input-bar" placeholder="User ID" required>
+                <input type="password" class="input-bar" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="button" class="submit-btn" onclick="loginForm()">Login</button>
+            </form>
+        
+            <form id="register" class="reg-form"onsubmit="RegisterForm(event)">
+                <input type="text" id="name" class="input-bar" placeholder="User name" required autocomplete="name">
+                <input type="email" id="email" class="input-bar" placeholder="User email" required autocomplete="email">
+                <input type="tel" id="num" class="input-bar" placeholder="User mobile number" required autocomplete="tel">
+                <input type="password" id="pass" class="input-bar" placeholder="Enter Password" required autocomplete="new-password">
+
+                <input type="checkbox"  id="checkbox"    class="check-box"><span> I Agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn"  >Register</button>
+            </form>
+        </div>
+    </div>
+        
+    </body>
+    
+</html>
+<script>
+    let x = document.getElementById("login");
+    let y = document.getElementById("register");
+    let z = document.getElementById("btn");
+    
+    function register(){
+        x.style.left="-400px";
+        y.style.left="50px";
+        z.style.left="110px"
+    }
+    function login(){
+        x.style.left="50px";
+        y.style.left="450px";
+        z.style.left="0"
+    }
+</script>
+<script type="module" src="./register.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+
+<!-- <script type="module">
+
+    import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+    
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyAg6FETq0TlRj2r-NQjf6ZTloz7vfMK8G4",
+        authDomain: "agro-bad69.firebaseapp.com",
+        databaseURL: "https://agro-bad69-default-rtdb.firebaseio.com",
+        projectId: "agro-bad69",
+        storageBucket: "agro-bad69.appspot.com",
+        messagingSenderId: "306956304903",
+        appId: "1:306956304903:web:2e5c1e9be26216028ea0a2",
+        measurementId: "G-DRK6Q7Q0QB"
+    };
+      
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    function RegisterForm(e)
+    {
+        e.preventDefault();
+        const name = document.getElementById('name').value 
+        const email = document.getElementById('email').value
+        const num = document.getElementById('num').value
+        const pass = document.getElementById('pass').value
+        
+        console.log("name : " + name);
+        console.log("email : "+email);
+        console.log("number : "+num);
+        console.log("password : "+pass);
+
+        
+        const auth = getAuth(app);
+        createUserWithEmailAndPassword(auth, email, pass)
+        .then((userCredential) => {
+        const user = userCredential.user;
+
+        
+        const userData = {
+            name: name,
+            email: email,
+            mobileNumber: num,
+        };
+
+        const database = getDatabase(app);
+
+        
+        const userKey = push(ref(database, 'users')).key;
+
+        
+        set(ref(database, `users/${userKey}`), userData)
+        .then(() => {
+                console.log('User data saved successfully:', userData);
+            })
+                .catch((error) => {
+                console.error('Error saving user data:', error);
+            });
+        })
+        .catch((error) => {
+            console.error('Error creating user account:', error);
+        });
+    }
+</script> -->
